@@ -1,0 +1,52 @@
+body{
+  background-image: url('../images/desk.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: larger;
+  font-family: 'Indie Flower', cursive;
+}
+
+h1{
+  padding-left: 45%;
+}
+.inputHere,button {
+  position:relative;
+  left: 10%;
+  font-size: larger;
+  border-radius: 5px;
+}
+.goodbye{
+  animation: removed-item-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+  /*transform origin is moved to the bottom left corner*/
+  transform-origin: 0% 100%;
+}
+
+@keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    transform: rotateZ(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(600px) rotateZ(90deg);
+  }
+}
+
+
+li {
+  padding-left: 45%;
+  list-style-type: none;
+  font-size: 30px;
+
+}
+
+
+.done-true {
+  text-decoration: line-through;
+}
+
+.btn2 {
+  margin: 5px;
+  background-color: white;
+}
