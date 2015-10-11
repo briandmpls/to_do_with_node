@@ -3,11 +3,11 @@
  */
 var app = angular.module('todo', []);
 
-app.controller('MainController', ['$scope', function($scope) {
+app.controller('MainController', ['$scope', '$http', function($scope,$http) {
 
     // Establish empty array of objects
     $scope.toDoList=[];
-
+    console.log("Hello");
 
     //Count number of objects in list
     $scope.totalToDoList = function(){
@@ -16,13 +16,32 @@ app.controller('MainController', ['$scope', function($scope) {
 
     //Add new input onto DOM list and Reinitialize list
     $scope.addNewItem = function () {
-        if($scope.here === "goodbye") {
+        console.log("hey");
+        if($scope.here == "goodbye") {
             $scope.here = "here";
             $scope.toDoList = [];
             console.log("New Item Added");
+
+
+
         }
         $scope.toDoList.push({text:$scope.newToDoItem, done:false});
+      //  console.log($scope.toDoList);
         $scope.newToDoItem = '';
+
+        var data = $scope.toDoList;
+
+        $http.post('/todo/addToDos', data).then(function (newdata){
+                console.log("todo route");
+                console.log(newdata);
+                $scope.list = newdata.data;
+            }
+        );
+
+
+        console.log(data);
+
+
     };
 
     //Remove old list

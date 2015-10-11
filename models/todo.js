@@ -5,10 +5,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var toDoSchema = new Schema({
-    list_item : String,
-    taskComplete: Boolean
+    listItem : String
 });
 
-var toDoListItem = mongoose.model('to_dos', toDoSchema);
+var todo = mongoose.model('todo', toDoSchema);
 
-module.exports = toDoListItem;
+module.exports = todo;

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todo">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Tangerine|Indie+Flower|Droid+Sans">
+    <link rel="stylesheet" href="./stylesheets/style.css"/>
+    <script src="/angular/angular.min.js"></script>
+    <script src="javascripts/controller.js"></script>
+
+    <title>To Do List</title>
+</head>
+<body>
+<div ng-controller='MainController as main'>
+
+    <h1>To Do List</h1>
+
+
+    <div class="main">
+
+        <input class="inputHere" type="text" ng-model="newToDoItem">
+
+        <button class="btn btn-default" ng-click="addNewItem()">Add To List</button>
+        <br/>
+        <button class="btn2" ng-click="removeItem()">Remove Checked Item</button>
+        <button class="btn2" ng-click="newList()">New List</button>
+
+        <ul>
+            <li ng-repeat="thing in toDoList">
+                <input  ng-class="here" type="checkbox" ng-model="thing.done">
+                <span ng-class="here" class="done-{{thing.done}}"> {{thing.text}} <br/></span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
