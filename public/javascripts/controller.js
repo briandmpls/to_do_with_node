@@ -25,9 +25,9 @@ app.controller('MainController', ['$scope', '$http', function($scope,$http) {
 
         $scope.toDoList.push({text:$scope.newToDoItem, done:false});
         console.log($scope.toDoList);
-        $scope.newToDoItem = '';
 
-        var data = $scope.toDoList;
+        var data = {listItem: $scope.newToDoItem};
+        $scope.newToDoItem = '';
 
         $http.post('/todo/addToDos', data).then(function (newdata){
                 console.log("todo route");
