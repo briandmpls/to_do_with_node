@@ -21,12 +21,10 @@ app.controller('MainController', ['$scope', '$http', function($scope,$http) {
             $scope.here = "here";
             $scope.toDoList = [];
             console.log("New Item Added");
-
-
-
         }
+
         $scope.toDoList.push({text:$scope.newToDoItem, done:false});
-      //  console.log($scope.toDoList);
+        console.log($scope.toDoList);
         $scope.newToDoItem = '';
 
         var data = $scope.toDoList;
@@ -35,11 +33,11 @@ app.controller('MainController', ['$scope', '$http', function($scope,$http) {
                 console.log("todo route");
                 console.log(newdata);
                 $scope.list = newdata.data;
-            }
-        );
+            });
 
 
-        console.log(data);
+
+
 
 
     };
