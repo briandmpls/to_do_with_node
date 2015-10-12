@@ -22,8 +22,8 @@
         <button class="btn btn-default" ng-click="addNewItem()">Add To List</button>
         <br/>
         <button class="btn2" ng-click="removeItem()">Remove Checked Item</button>
-        <button class="btn2" ng-click="newList()">New List</button>
-
+        <button class="btn2" ng-click="newList()">New List</button><br/>
+        <button class="btn2" ng-click="oldList()">Old List</button>
         <ul>
             <li ng-repeat="thing in toDoList">
                 <input  ng-class="here" type="checkbox" ng-model="thing.done">

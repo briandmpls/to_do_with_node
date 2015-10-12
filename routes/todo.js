@@ -15,7 +15,7 @@ router.get('/getToDos', function(req, res, next){
 router.post('/addToDos', function(req, res, next){
     console.log(req.body);
     todo.create(req.body, function(err, post){
-        res.send();
+        res.send('all good');
     })
 });
 

@@ -6,6 +6,11 @@ body{
   font-size: larger;
   font-family: 'Indie Flower', cursive;
 }
+button {
+  font-family: 'Indie Flower', cursive;
+}
+
+
 
 h1{
   padding-left: 45%;
